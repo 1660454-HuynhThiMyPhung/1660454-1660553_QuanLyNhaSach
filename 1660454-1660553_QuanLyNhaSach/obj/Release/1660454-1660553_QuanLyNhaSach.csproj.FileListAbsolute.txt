@@ -1,0 +1,14 @@
+E:\DoAN\test\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\bin\Release\1660454-1660553_QuanLyNhaSach.exe.config
+E:\DoAN\test\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\bin\Release\1660454-1660553_QuanLyNhaSach.exe
+E:\DoAN\test\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\bin\Release\1660454-1660553_QuanLyNhaSach.pdb
+E:\DoAN\test\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\1660454-1660553_QuanLyNhaSach.csprojAssemblyReference.cache
+E:\DoAN\test\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\_1660454_1660553_QuanLyNhaSach.fAdmin.resources
+E:\DoAN\test\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\_1660454_1660553_QuanLyNhaSach.fPos.resources
+E:\DoAN\test\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\_1660454_1660553_QuanLyNhaSach.fLogin.resources
+E:\DoAN\test\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\_1660454_1660553_QuanLyNhaSach.fStaff.resources
+E:\DoAN\test\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\_1660454_1660553_QuanLyNhaSach.Properties.Resources.resources
+E:\DoAN\test\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\1660454-1660553_QuanLyNhaSach.csproj.GenerateResource.cache
+E:\DoAN\test\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\1660454-1660553_QuanLyNhaSach.csproj.CoreCompileInputs.cache
+E:\DoAN\test\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\1660454-1660553_QuanLyNhaSach.exe
+E:\DoAN\test\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\1660454-1660553_QuanLyNhaSach.pdb
+E:\DoAN\test\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\_1660454_1660553_QuanLyNhaSach.fKhachHang.resources
