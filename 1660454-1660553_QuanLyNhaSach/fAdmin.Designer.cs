@@ -64,7 +64,6 @@
             this.button20 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.bntxoa = new System.Windows.Forms.Button();
             this.bntsua = new System.Windows.Forms.Button();
             this.btnthem = new System.Windows.Forms.Button();
@@ -589,7 +588,6 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.bntxoa);
             this.panel4.Controls.Add(this.bntsua);
             this.panel4.Controls.Add(this.btnthem);
@@ -597,15 +595,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(751, 92);
             this.panel4.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(481, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 63);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Xem";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // bntxoa
             // 
@@ -615,6 +604,7 @@
             this.bntxoa.TabIndex = 2;
             this.bntxoa.Text = "Xóa";
             this.bntxoa.UseVisualStyleBackColor = true;
+            this.bntxoa.Click += new System.EventHandler(this.bntxoa_Click);
             // 
             // bntsua
             // 
@@ -624,6 +614,7 @@
             this.bntsua.TabIndex = 1;
             this.bntsua.Text = "Sửa";
             this.bntsua.UseVisualStyleBackColor = true;
+            this.bntsua.Click += new System.EventHandler(this.bntsua_Click);
             // 
             // btnthem
             // 
@@ -633,6 +624,7 @@
             this.btnthem.TabIndex = 0;
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = true;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // panel3
             // 
@@ -752,7 +744,7 @@
             this.ID.HeaderText = "Mã Danh Mục";
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
-            this.ID.Width = 124;
+            this.ID.Width = 120;
             // 
             // Ten_DM
             // 
@@ -1090,6 +1082,7 @@
             this.button5.TabIndex = 0;
             this.button5.Text = "Thêm";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // tabPage5
             // 
@@ -1140,7 +1133,7 @@
             this.IDs.HeaderText = "ID";
             this.IDs.MinimumWidth = 6;
             this.IDs.Name = "IDs";
-            this.IDs.Width = 50;
+            this.IDs.Width = 46;
             // 
             // UserName
             // 
@@ -1586,7 +1579,7 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "Mã Khách Hàng";
             this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 127;
+            this.dataGridViewTextBoxColumn9.Width = 123;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -1693,7 +1686,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtiddm;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ten_DM;
         private System.Windows.Forms.Panel panel7;

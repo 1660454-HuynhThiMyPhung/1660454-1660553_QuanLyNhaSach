@@ -41,3 +41,15 @@ E:\DoAN\nopgithub\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\ob
 E:\DoAN\nopgithub\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\bin\Debug\1660454-1660553_QuanLyNhaSach.exe.config
 E:\DoAN\nopgithub\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\bin\Debug\1660454-1660553_QuanLyNhaSach.exe
 E:\DoAN\nopgithub\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\bin\Debug\1660454-1660553_QuanLyNhaSach.pdb
+C:\Users\NhokRong\Desktop\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\bin\Debug\1660454-1660553_QuanLyNhaSach.exe.config
+C:\Users\NhokRong\Desktop\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Debug\1660454-1660553_QuanLyNhaSach.exe
+C:\Users\NhokRong\Desktop\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Debug\1660454-1660553_QuanLyNhaSach.pdb
+C:\Users\NhokRong\Desktop\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Debug\1660454-1660553_QuanLyNhaSach.csprojResolveAssemblyReference.cache
+C:\Users\NhokRong\Desktop\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Debug\_1660454_1660553_QuanLyNhaSach.fAdmin.resources
+C:\Users\NhokRong\Desktop\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Debug\_1660454_1660553_QuanLyNhaSach.fImportDetail.resources
+C:\Users\NhokRong\Desktop\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Debug\_1660454_1660553_QuanLyNhaSach.fKhachHang.resources
+C:\Users\NhokRong\Desktop\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Debug\_1660454_1660553_QuanLyNhaSach.fPos.resources
+C:\Users\NhokRong\Desktop\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Debug\_1660454_1660553_QuanLyNhaSach.fLogin.resources
+C:\Users\NhokRong\Desktop\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Debug\_1660454_1660553_QuanLyNhaSach.fStaff.resources
+C:\Users\NhokRong\Desktop\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Debug\_1660454_1660553_QuanLyNhaSach.Properties.Resources.resources
+C:\Users\NhokRong\Desktop\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Debug\1660454-1660553_QuanLyNhaSach.csproj.GenerateResource.Cache
