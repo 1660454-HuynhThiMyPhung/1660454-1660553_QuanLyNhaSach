@@ -29,6 +29,8 @@ namespace _1660454_1660553_QuanLyNhaSach
         {
             datagvDM.DataSource = CategoryList;
             QuanLy_Load();
+
+            Adddanhmucbinding();
         }
         void QuanLy_Load()
         {
