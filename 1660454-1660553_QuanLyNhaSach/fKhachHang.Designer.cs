@@ -94,6 +94,7 @@ namespace _1660454_1660553_QuanLyNhaSach
             this.btthem.TabIndex = 15;
             this.btthem.Text = "Thêm";
             this.btthem.UseVisualStyleBackColor = true;
+            this.btthem.Click += new System.EventHandler(this.btthem_Click);
             // 
             // egmailkh
             // 

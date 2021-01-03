@@ -8,6 +8,8 @@ namespace _1660454_1660553_QuanLyNhaSach
 {
     class Session
     {
+        public static int discount = 0;
+
         public static String GetMD5(string txt)
         {
             String str = "";
