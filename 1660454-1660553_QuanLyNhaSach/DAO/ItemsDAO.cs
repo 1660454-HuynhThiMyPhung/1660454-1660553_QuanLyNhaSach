@@ -21,7 +21,7 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
         {
             List<Items> list = new List<Items>();
 
-            string query = "select * from San_Pham";
+            string query = "select * from San_Pham"
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             data.Columns.Add("avatar", Type.GetType("System.Byte[]"));

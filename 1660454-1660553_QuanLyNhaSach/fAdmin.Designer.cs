@@ -91,18 +91,6 @@
             this.stockmini = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.cbbdmsp = new System.Windows.Forms.ComboBox();
-            this.imgsp = new System.Windows.Forms.PictureBox();
-            this.txtnote = new System.Windows.Forms.RichTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtprice = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txttensp = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtidsp = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
@@ -160,6 +148,23 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtidsp = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txttensp = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtprice = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtnote = new System.Windows.Forms.RichTextBox();
+            this.imgsp = new System.Windows.Forms.PictureBox();
+            this.cbbdmsp = new System.Windows.Forms.ComboBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.txtlinkhinh = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.bntxoarongsp = new System.Windows.Forms.Button();
+            this.txtstock_mini = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.panel21.SuspendLayout();
@@ -179,8 +184,6 @@
             this.tabPage4.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagvSP)).BeginInit();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgsp)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -195,6 +198,8 @@
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagvclient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgsp)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -874,130 +879,6 @@
             this.NgayTao.Name = "NgayTao";
             this.NgayTao.Width = 125;
             // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel7.Controls.Add(this.cbbdmsp);
-            this.panel7.Controls.Add(this.imgsp);
-            this.panel7.Controls.Add(this.txtnote);
-            this.panel7.Controls.Add(this.label7);
-            this.panel7.Controls.Add(this.label6);
-            this.panel7.Controls.Add(this.txtprice);
-            this.panel7.Controls.Add(this.label5);
-            this.panel7.Controls.Add(this.txttensp);
-            this.panel7.Controls.Add(this.label3);
-            this.panel7.Controls.Add(this.txtidsp);
-            this.panel7.Controls.Add(this.label4);
-            this.panel7.Location = new System.Drawing.Point(763, 108);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(448, 569);
-            this.panel7.TabIndex = 6;
-            // 
-            // cbbdmsp
-            // 
-            this.cbbdmsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbdmsp.FormattingEnabled = true;
-            this.cbbdmsp.Location = new System.Drawing.Point(190, 341);
-            this.cbbdmsp.Name = "cbbdmsp";
-            this.cbbdmsp.Size = new System.Drawing.Size(246, 30);
-            this.cbbdmsp.TabIndex = 12;
-            // 
-            // imgsp
-            // 
-            this.imgsp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgsp.Enabled = false;
-            this.imgsp.Location = new System.Drawing.Point(151, 15);
-            this.imgsp.MaximumSize = new System.Drawing.Size(187, 121);
-            this.imgsp.Name = "imgsp";
-            this.imgsp.Size = new System.Drawing.Size(187, 121);
-            this.imgsp.TabIndex = 11;
-            this.imgsp.TabStop = false;
-            // 
-            // txtnote
-            // 
-            this.txtnote.Location = new System.Drawing.Point(190, 389);
-            this.txtnote.Name = "txtnote";
-            this.txtnote.Size = new System.Drawing.Size(246, 96);
-            this.txtnote.TabIndex = 10;
-            this.txtnote.Text = "";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.label7.Location = new System.Drawing.Point(27, 398);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 25);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Ghi chú:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.label6.Location = new System.Drawing.Point(27, 354);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 25);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Danh mục:";
-            // 
-            // txtprice
-            // 
-            this.txtprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtprice.Location = new System.Drawing.Point(190, 300);
-            this.txtprice.Name = "txtprice";
-            this.txtprice.Size = new System.Drawing.Size(246, 30);
-            this.txtprice.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.label5.Location = new System.Drawing.Point(27, 305);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 25);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Giá bán:";
-            // 
-            // txttensp
-            // 
-            this.txttensp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttensp.Location = new System.Drawing.Point(190, 259);
-            this.txttensp.Name = "txttensp";
-            this.txttensp.Size = new System.Drawing.Size(246, 30);
-            this.txttensp.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.label3.Location = new System.Drawing.Point(27, 264);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tên sản phẩm:";
-            // 
-            // txtidsp
-            // 
-            this.txtidsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtidsp.Location = new System.Drawing.Point(190, 205);
-            this.txtidsp.Name = "txtidsp";
-            this.txtidsp.ReadOnly = true;
-            this.txtidsp.Size = new System.Drawing.Size(246, 30);
-            this.txtidsp.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.label4.Location = new System.Drawing.Point(27, 210);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "ID:";
-            // 
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1596,6 +1477,180 @@
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.Width = 125;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.label4.Location = new System.Drawing.Point(27, 210);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 25);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "ID:";
+            // 
+            // txtidsp
+            // 
+            this.txtidsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtidsp.Location = new System.Drawing.Point(190, 205);
+            this.txtidsp.Name = "txtidsp";
+            this.txtidsp.ReadOnly = true;
+            this.txtidsp.Size = new System.Drawing.Size(246, 30);
+            this.txtidsp.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.label3.Location = new System.Drawing.Point(27, 264);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Tên sản phẩm:";
+            // 
+            // txttensp
+            // 
+            this.txttensp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttensp.Location = new System.Drawing.Point(190, 259);
+            this.txttensp.Name = "txttensp";
+            this.txttensp.Size = new System.Drawing.Size(246, 30);
+            this.txttensp.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.label5.Location = new System.Drawing.Point(27, 305);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 25);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Giá bán:";
+            // 
+            // txtprice
+            // 
+            this.txtprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtprice.Location = new System.Drawing.Point(190, 300);
+            this.txtprice.Name = "txtprice";
+            this.txtprice.Size = new System.Drawing.Size(246, 30);
+            this.txtprice.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.label6.Location = new System.Drawing.Point(27, 346);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(116, 25);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Danh mục:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.label7.Location = new System.Drawing.Point(28, 447);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 25);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Ghi chú:";
+            // 
+            // txtnote
+            // 
+            this.txtnote.Location = new System.Drawing.Point(190, 454);
+            this.txtnote.Name = "txtnote";
+            this.txtnote.Size = new System.Drawing.Size(246, 96);
+            this.txtnote.TabIndex = 10;
+            this.txtnote.Text = "";
+            // 
+            // imgsp
+            // 
+            this.imgsp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgsp.Enabled = false;
+            this.imgsp.Location = new System.Drawing.Point(151, 15);
+            this.imgsp.MaximumSize = new System.Drawing.Size(187, 121);
+            this.imgsp.Name = "imgsp";
+            this.imgsp.Size = new System.Drawing.Size(187, 121);
+            this.imgsp.TabIndex = 11;
+            this.imgsp.TabStop = false;
+            // 
+            // cbbdmsp
+            // 
+            this.cbbdmsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbdmsp.FormattingEnabled = true;
+            this.cbbdmsp.Location = new System.Drawing.Point(190, 341);
+            this.cbbdmsp.Name = "cbbdmsp";
+            this.cbbdmsp.Size = new System.Drawing.Size(246, 30);
+            this.cbbdmsp.TabIndex = 12;
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel7.Controls.Add(this.label19);
+            this.panel7.Controls.Add(this.txtstock_mini);
+            this.panel7.Controls.Add(this.bntxoarongsp);
+            this.panel7.Controls.Add(this.button1);
+            this.panel7.Controls.Add(this.txtlinkhinh);
+            this.panel7.Controls.Add(this.cbbdmsp);
+            this.panel7.Controls.Add(this.imgsp);
+            this.panel7.Controls.Add(this.txtnote);
+            this.panel7.Controls.Add(this.label7);
+            this.panel7.Controls.Add(this.label6);
+            this.panel7.Controls.Add(this.txtprice);
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Controls.Add(this.txttensp);
+            this.panel7.Controls.Add(this.label3);
+            this.panel7.Controls.Add(this.txtidsp);
+            this.panel7.Controls.Add(this.label4);
+            this.panel7.Location = new System.Drawing.Point(763, 108);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(448, 569);
+            this.panel7.TabIndex = 6;
+            // 
+            // txtlinkhinh
+            // 
+            this.txtlinkhinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtlinkhinh.Location = new System.Drawing.Point(32, 155);
+            this.txtlinkhinh.Name = "txtlinkhinh";
+            this.txtlinkhinh.ReadOnly = true;
+            this.txtlinkhinh.Size = new System.Drawing.Size(246, 30);
+            this.txtlinkhinh.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(299, 155);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 30);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Upload File";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // bntxoarongsp
+            // 
+            this.bntxoarongsp.Location = new System.Drawing.Point(32, 489);
+            this.bntxoarongsp.Name = "bntxoarongsp";
+            this.bntxoarongsp.Size = new System.Drawing.Size(119, 61);
+            this.bntxoarongsp.TabIndex = 15;
+            this.bntxoarongsp.Text = "Xóa rỗng";
+            this.bntxoarongsp.UseVisualStyleBackColor = true;
+            // 
+            // txtstock_mini
+            // 
+            this.txtstock_mini.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstock_mini.Location = new System.Drawing.Point(214, 398);
+            this.txtstock_mini.Name = "txtstock_mini";
+            this.txtstock_mini.Size = new System.Drawing.Size(222, 30);
+            this.txtstock_mini.TabIndex = 16;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.label19.Location = new System.Drawing.Point(28, 398);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(180, 25);
+            this.label19.TabIndex = 17;
+            this.label19.Text = "Tồn kho tối thiểu:";
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1628,9 +1683,6 @@
             this.tabPage4.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagvSP)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgsp)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -1650,6 +1702,9 @@
             this.panel14.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagvclient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgsp)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1679,11 +1734,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ten_DM;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox txttensp;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtidsp;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button6;
@@ -1693,13 +1743,6 @@
         private System.Windows.Forms.Button btnthemsanpham;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridView datagvSP;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtprice;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox txtnote;
-        private System.Windows.Forms.PictureBox imgsp;
-        private System.Windows.Forms.ComboBox cbbdmsp;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.ComboBox cbbcv;
         private System.Windows.Forms.Label label9;
@@ -1788,5 +1831,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtlinkhinh;
+        private System.Windows.Forms.ComboBox cbbdmsp;
+        private System.Windows.Forms.PictureBox imgsp;
+        private System.Windows.Forms.RichTextBox txtnote;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtprice;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txttensp;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtidsp;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button bntxoarongsp;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtstock_mini;
     }
 }

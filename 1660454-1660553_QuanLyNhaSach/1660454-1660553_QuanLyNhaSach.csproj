@@ -50,8 +50,10 @@
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\CategoryDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\ItemsDAO.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Category.cs" />
+    <Compile Include="DTO\Items.cs" />
     <Compile Include="fAdmin.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -88,7 +88,7 @@ namespace _1660454_1660553_QuanLyNhaSach.DTO
         }
         private int stockminis;
         public int stockmini
-        {
+        { 
             get { return stockminis; }
             set { stockminis = value; }
         }
