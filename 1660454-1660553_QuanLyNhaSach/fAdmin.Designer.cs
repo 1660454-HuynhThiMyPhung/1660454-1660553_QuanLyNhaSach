@@ -107,10 +107,9 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnxoasp = new System.Windows.Forms.Button();
+            this.btnsuasanpham = new System.Windows.Forms.Button();
+            this.btnthemsanpham = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
             this.datagvStaff = new System.Windows.Forms.DataGridView();
@@ -1038,51 +1037,43 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.button3);
-            this.panel5.Controls.Add(this.button4);
-            this.panel5.Controls.Add(this.button5);
+            this.panel5.Controls.Add(this.btnxoasp);
+            this.panel5.Controls.Add(this.btnsuasanpham);
+            this.panel5.Controls.Add(this.btnthemsanpham);
             this.panel5.Location = new System.Drawing.Point(6, 6);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(751, 92);
             this.panel5.TabIndex = 4;
             // 
-            // button2
+            // btnxoasp
             // 
-            this.button2.Location = new System.Drawing.Point(481, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 63);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Xem";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnxoasp.Location = new System.Drawing.Point(329, 15);
+            this.btnxoasp.Name = "btnxoasp";
+            this.btnxoasp.Size = new System.Drawing.Size(112, 63);
+            this.btnxoasp.TabIndex = 2;
+            this.btnxoasp.Text = "Xóa";
+            this.btnxoasp.UseVisualStyleBackColor = true;
+            this.btnxoasp.Click += new System.EventHandler(this.btnxoasp_Click);
             // 
-            // button3
+            // btnsuasanpham
             // 
-            this.button3.Location = new System.Drawing.Point(329, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 63);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnsuasanpham.Location = new System.Drawing.Point(171, 15);
+            this.btnsuasanpham.Name = "btnsuasanpham";
+            this.btnsuasanpham.Size = new System.Drawing.Size(112, 63);
+            this.btnsuasanpham.TabIndex = 1;
+            this.btnsuasanpham.Text = "Sửa";
+            this.btnsuasanpham.UseVisualStyleBackColor = true;
+            this.btnsuasanpham.Click += new System.EventHandler(this.btnsuasanpham_Click);
             // 
-            // button4
+            // btnthemsanpham
             // 
-            this.button4.Location = new System.Drawing.Point(171, 15);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(112, 63);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Sửa";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(14, 15);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(112, 63);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Thêm";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnthemsanpham.Location = new System.Drawing.Point(14, 15);
+            this.btnthemsanpham.Name = "btnthemsanpham";
+            this.btnthemsanpham.Size = new System.Drawing.Size(112, 63);
+            this.btnthemsanpham.TabIndex = 0;
+            this.btnthemsanpham.Text = "Thêm";
+            this.btnthemsanpham.UseVisualStyleBackColor = true;
+            this.btnthemsanpham.Click += new System.EventHandler(this.btnthemsanpham_Click);
             // 
             // tabPage5
             // 
@@ -1697,10 +1688,9 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnxoasp;
+        private System.Windows.Forms.Button btnsuasanpham;
+        private System.Windows.Forms.Button btnthemsanpham;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridView datagvSP;
         private System.Windows.Forms.Label label7;
