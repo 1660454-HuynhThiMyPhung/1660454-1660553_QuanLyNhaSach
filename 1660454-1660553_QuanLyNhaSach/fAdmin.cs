@@ -17,6 +17,7 @@ namespace _1660454_1660553_QuanLyNhaSach
     {
         BindingSource CategoryList = new BindingSource();
         BindingSource ItemsList = new BindingSource();
+        BindingSource ReportDoanhthuList = new BindingSource();
 
 
         public fAdmin()
@@ -32,6 +33,7 @@ namespace _1660454_1660553_QuanLyNhaSach
         {
             datagvDM.DataSource = CategoryList;
             datagvSP.DataSource = ItemsList;
+            datareport_doanhthu.DataSource = ReportDoanhthuList;
 
             QuanLy_Load();
 
@@ -43,6 +45,11 @@ namespace _1660454_1660553_QuanLyNhaSach
         {
             LoadListCategory();
             LoadListItems();
+            LoadListReportDoanhthu();
+        }
+        void LoadListReportDoanhthu()
+        {
+            datareport_doanhthu.DataSource = ReportDAO.Instance.GetListDoanhThu();
         }
         void LoadListItems()
         {
@@ -210,6 +217,25 @@ namespace _1660454_1660553_QuanLyNhaSach
                 {
                     MessageBox.Show("Có lỗi khi xóa sản phẩm");
                 }
+            }
+        }
+
+        private void bntxempos_Click(object sender, EventArgs e)
+        {
+            int id = datareport_doanhthu.CurrentCell.RowIndex;
+            string ld = datareport_doanhthu.Rows[id].Cells[0].Value.ToString();
+            string discount = datareport_doanhthu.Rows[id].Cells[5].Value.ToString();
+            string client = datareport_doanhthu.Rows[id].Cells[1].Value.ToString();
+
+
+            if (OrderDAO.Instance.GetImportByID(ld) == false)
+            {
+                MessageBox.Show("Đơn hàng không tồn tại");
+            }
+            else
+            {
+                fPosDetail f = new fPosDetail(ld, discount, client);
+                f.ShowDialog();
             }
         }
     }

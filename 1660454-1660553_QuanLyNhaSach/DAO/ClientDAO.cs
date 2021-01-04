@@ -31,6 +31,18 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
             }
             return clients;
         }
+        public Client GetItemsByIDs(string id)
+        {
+            Client clients = null;
+            string query = "select * from Khach_Hang where Ma_KH = '" + id + "'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                clients = new Client(item);
+                return clients;
+            }
+            return clients;
+        }
         public bool InsertClient(string name, string sdt, string email, string address, string sex)
         {
             string id = ClientDAO.Instance.Getprefix();

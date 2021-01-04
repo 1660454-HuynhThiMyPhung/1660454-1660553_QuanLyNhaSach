@@ -52,11 +52,14 @@
     <Compile Include="DAO\ClientDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\ItemsDAO.cs" />
+    <Compile Include="DAO\OrderDAO.cs" />
+    <Compile Include="DAO\ReportDAO.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Category.cs" />
     <Compile Include="DTO\Client.cs" />
     <Compile Include="DTO\Items.cs" />
     <Compile Include="DTO\POS.cs" />
+    <Compile Include="DTO\Report.cs" />
     <Compile Include="fAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +89,12 @@
     </Compile>
     <Compile Include="fPos.Designer.cs">
       <DependentUpon>fPos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fPosDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPosDetail.Designer.cs">
+      <DependentUpon>fPosDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="fStaff.cs">
       <SubType>Form</SubType>
@@ -119,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPosDetail.resx">
+      <DependentUpon>fPosDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fStaff.resx">
       <DependentUpon>fStaff.cs</DependentUpon>

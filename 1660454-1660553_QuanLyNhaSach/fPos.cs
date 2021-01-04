@@ -39,7 +39,14 @@ namespace _1660454_1660553_QuanLyNhaSach
         {
             InitializeComponent();
             this.LoginAccount = acc;
+            getDoanhThu();  
 
+        }
+        void getDoanhThu()
+        {
+            int total = AccountDAO.Instance.getDoanhThu(loginAccount.ID);
+            txttennv.Text = loginAccount.UserName;
+            txttotal.Text = String.Format("{0:n0}", total);
         }
         #region Method
 
@@ -181,6 +188,46 @@ namespace _1660454_1660553_QuanLyNhaSach
         {
             LoadPOS();
         }
+
+        private void bththanhtoan_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thanh toán", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                if (list_items != null)
+                {
+                    if (clients != null)
+                    {
+                        if (OrderDAO.Instance.InsertOrder(list_items, LoginAccount, clients))
+                        {
+                            MessageBox.Show("Thêm đơn hàng thành công");
+                            clients = null;
+                            ltenKH.Text = "";
+                            lsex.Text = "";
+                            laddress.Text = "";
+                            lemailKH.Text = "";
+                            txtdiem.Text = "";
+                            list_items = new List<POS>();
+                            Session.discount = 0;
+                            LoadPOS();
+                            getDoanhThu();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Có lỗi khi thêm đơn hàng");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không có khách hàng");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không có sản phẩm");
+                }
+            }
+        }
+
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fAdmin f = new fAdmin();

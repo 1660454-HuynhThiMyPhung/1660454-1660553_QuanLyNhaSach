@@ -69,3 +69,4 @@ E:\DoAN\NhaSach\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\bin\
 E:\DoAN\NhaSach\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\bin\Debug\1660454-1660553_QuanLyNhaSach.exe
 E:\DoAN\NhaSach\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\bin\Debug\1660454-1660553_QuanLyNhaSach.pdb
 E:\DoAN\NhaSach\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Debug\_1660454_1660553_QuanLyNhaSach.fDiscount.resources
+E:\DoAN\NhaSach\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Debug\_1660454_1660553_QuanLyNhaSach.fPosDetail.resources

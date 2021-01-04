@@ -42,6 +42,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.bthtimkh = new System.Windows.Forms.Button();
             this.txtsdtkh = new System.Windows.Forms.TextBox();
+            this.bththemkh = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.bnthuyphieu = new System.Windows.Forms.Button();
@@ -91,7 +92,9 @@
             this.lab = new System.Windows.Forms.Panel();
             this.txtthanhtien = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.bththemkh = new System.Windows.Forms.Button();
+            this.txttennv = new System.Windows.Forms.Label();
+            this.txttotal = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -254,6 +257,18 @@
             this.txtsdtkh.Enter += new System.EventHandler(this.txtsdtkh_Enter);
             this.txtsdtkh.Leave += new System.EventHandler(this.txtsdtkh_Leave);
             // 
+            // bththemkh
+            // 
+            this.bththemkh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bththemkh.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bththemkh.Image = global::_1660454_1660553_QuanLyNhaSach.Properties.Resources.Add;
+            this.bththemkh.Location = new System.Drawing.Point(363, 3);
+            this.bththemkh.Name = "bththemkh";
+            this.bththemkh.Size = new System.Drawing.Size(50, 83);
+            this.bththemkh.TabIndex = 8;
+            this.bththemkh.UseVisualStyleBackColor = false;
+            this.bththemkh.Click += new System.EventHandler(this.bththemkh_Click);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -308,6 +323,7 @@
             this.bththanhtoan.TabIndex = 12;
             this.bththanhtoan.Text = "Thanh toán";
             this.bththanhtoan.UseVisualStyleBackColor = false;
+            this.bththanhtoan.Click += new System.EventHandler(this.bththanhtoan_Click);
             // 
             // panel1
             // 
@@ -566,14 +582,14 @@
             this.thôngTinTàiKhoảngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1422, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1422, 28);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.adminToolStripMenuItem.Text = "Admin";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
@@ -583,7 +599,7 @@
             this.thôngTinCáNhânToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.thôngTinTàiKhoảngToolStripMenuItem.Name = "thôngTinTàiKhoảngToolStripMenuItem";
-            this.thôngTinTàiKhoảngToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.thôngTinTàiKhoảngToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
             this.thôngTinTàiKhoảngToolStripMenuItem.Text = "Thông tin tài khoản";
             // 
             // thôngTinCáNhânToolStripMenuItem
@@ -768,23 +784,46 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Thành tiền";
             // 
-            // bththemkh
+            // txttennv
             // 
-            this.bththemkh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bththemkh.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.bththemkh.Image = global::_1660454_1660553_QuanLyNhaSach.Properties.Resources.Add;
-            this.bththemkh.Location = new System.Drawing.Point(363, 3);
-            this.bththemkh.Name = "bththemkh";
-            this.bththemkh.Size = new System.Drawing.Size(50, 83);
-            this.bththemkh.TabIndex = 8;
-            this.bththemkh.UseVisualStyleBackColor = false;
-            this.bththemkh.Click += new System.EventHandler(this.bththemkh_Click);
+            this.txttennv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttennv.AutoSize = true;
+            this.txttennv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttennv.Location = new System.Drawing.Point(1011, 667);
+            this.txttennv.Name = "txttennv";
+            this.txttennv.Size = new System.Drawing.Size(0, 25);
+            this.txttennv.TabIndex = 21;
+            // 
+            // txttotal
+            // 
+            this.txttotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttotal.AutoSize = true;
+            this.txttotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttotal.Location = new System.Drawing.Point(1210, 705);
+            this.txttotal.Name = "txttotal";
+            this.txttotal.Size = new System.Drawing.Size(23, 25);
+            this.txttotal.TabIndex = 20;
+            this.txttotal.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1011, 705);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(193, 25);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Doanh thu hôm nay: ";
             // 
             // fPos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1422, 756);
+            this.Controls.Add(this.txttennv);
+            this.Controls.Add(this.txttotal);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dateTimePicker1);
@@ -892,5 +931,8 @@
         private System.Windows.Forms.Panel lab;
         private System.Windows.Forms.Label txtthanhtien;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label txttennv;
+        private System.Windows.Forms.Label txttotal;
+        private System.Windows.Forms.Label label2;
     }
 }
