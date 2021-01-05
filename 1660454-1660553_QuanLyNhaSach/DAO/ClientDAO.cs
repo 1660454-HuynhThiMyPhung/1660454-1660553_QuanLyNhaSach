@@ -18,7 +18,21 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
             private set { ClientDAO.instance = value; }
         }
         private ClientDAO() { }
+        public List<Client> GetListClient()
+        {
+            List<Client> list = new List<Client>();
 
+            string query = "select * from Khach_Hang";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                Client client = new Client(item);
+                list.Add(client);
+            }
+            return list;
+        }
         public Client GetItemsByID(string sdt)
         {
             Client clients = null;
