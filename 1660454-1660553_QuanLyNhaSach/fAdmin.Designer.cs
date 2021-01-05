@@ -75,7 +75,6 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel18 = new System.Windows.Forms.Panel();
             this.btnview_import = new System.Windows.Forms.Button();
-            this.btnedit_import = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -113,7 +112,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtlinkhinh = new System.Windows.Forms.TextBox();
             this.cbbdmsp = new System.Windows.Forms.ComboBox();
-            this.imgsp = new System.Windows.Forms.PictureBox();
             this.txtnote = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -161,16 +159,6 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.button16 = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.bntxoakh = new System.Windows.Forms.Button();
-            this.bntsuakh = new System.Windows.Forms.Button();
-            this.bntthemkh = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.datagvclient = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bntxoarongkh = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.cbbsex = new System.Windows.Forms.ComboBox();
@@ -184,6 +172,17 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtidkh = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.bntxoakh = new System.Windows.Forms.Button();
+            this.bntsuakh = new System.Windows.Forms.Button();
+            this.bntthemkh = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.datagvclient = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imgsp = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel23.SuspendLayout();
@@ -208,7 +207,6 @@
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagvSP)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgsp)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -223,6 +221,7 @@
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagvclient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgsp)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -657,6 +656,7 @@
             this.dategvImport.RowTemplate.Height = 20;
             this.dategvImport.Size = new System.Drawing.Size(1211, 573);
             this.dategvImport.TabIndex = 0;
+            this.dategvImport.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dategvImport_CellContentClick);
             // 
             // dataGridViewImageColumn1
             // 
@@ -714,7 +714,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel18.Controls.Add(this.btnview_import);
-            this.panel18.Controls.Add(this.btnedit_import);
             this.panel18.Controls.Add(this.button20);
             this.panel18.Location = new System.Drawing.Point(3, 6);
             this.panel18.Name = "panel18";
@@ -723,21 +722,13 @@
             // 
             // btnview_import
             // 
-            this.btnview_import.Location = new System.Drawing.Point(295, 15);
+            this.btnview_import.Location = new System.Drawing.Point(148, 15);
             this.btnview_import.Name = "btnview_import";
             this.btnview_import.Size = new System.Drawing.Size(112, 63);
             this.btnview_import.TabIndex = 3;
             this.btnview_import.Text = "Xem";
             this.btnview_import.UseVisualStyleBackColor = true;
-            // 
-            // btnedit_import
-            // 
-            this.btnedit_import.Location = new System.Drawing.Point(152, 15);
-            this.btnedit_import.Name = "btnedit_import";
-            this.btnedit_import.Size = new System.Drawing.Size(112, 63);
-            this.btnedit_import.TabIndex = 1;
-            this.btnedit_import.Text = "Sửa";
-            this.btnedit_import.UseVisualStyleBackColor = true;
+            this.btnview_import.Click += new System.EventHandler(this.btnview_import_Click);
             // 
             // button20
             // 
@@ -924,7 +915,7 @@
             this.ID.HeaderText = "Mã Danh Mục";
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
-            this.ID.Width = 120;
+            this.ID.Width = 124;
             // 
             // Ten_DM
             // 
@@ -1060,13 +1051,13 @@
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel7.Controls.Add(this.imgsp);
             this.panel7.Controls.Add(this.label19);
             this.panel7.Controls.Add(this.txtstock_mini);
             this.panel7.Controls.Add(this.bntxoarongsp);
             this.panel7.Controls.Add(this.button1);
             this.panel7.Controls.Add(this.txtlinkhinh);
             this.panel7.Controls.Add(this.cbbdmsp);
-            this.panel7.Controls.Add(this.imgsp);
             this.panel7.Controls.Add(this.txtnote);
             this.panel7.Controls.Add(this.label7);
             this.panel7.Controls.Add(this.label6);
@@ -1134,17 +1125,6 @@
             this.cbbdmsp.Name = "cbbdmsp";
             this.cbbdmsp.Size = new System.Drawing.Size(246, 30);
             this.cbbdmsp.TabIndex = 12;
-            // 
-            // imgsp
-            // 
-            this.imgsp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgsp.Enabled = false;
-            this.imgsp.Location = new System.Drawing.Point(151, 15);
-            this.imgsp.MaximumSize = new System.Drawing.Size(187, 121);
-            this.imgsp.Name = "imgsp";
-            this.imgsp.Size = new System.Drawing.Size(187, 121);
-            this.imgsp.TabIndex = 11;
-            this.imgsp.TabStop = false;
             // 
             // txtnote
             // 
@@ -1355,7 +1335,7 @@
             this.IDs.HeaderText = "ID";
             this.IDs.MinimumWidth = 6;
             this.IDs.Name = "IDs";
-            this.IDs.Width = 46;
+            this.IDs.Width = 50;
             // 
             // UserName
             // 
@@ -1652,110 +1632,6 @@
             this.panel15.Size = new System.Drawing.Size(448, 569);
             this.panel15.TabIndex = 10;
             // 
-            // panel14
-            // 
-            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel14.Controls.Add(this.bntxoakh);
-            this.panel14.Controls.Add(this.bntsuakh);
-            this.panel14.Controls.Add(this.bntthemkh);
-            this.panel14.Location = new System.Drawing.Point(0, 6);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(751, 92);
-            this.panel14.TabIndex = 9;
-            // 
-            // bntxoakh
-            // 
-            this.bntxoakh.Location = new System.Drawing.Point(329, 15);
-            this.bntxoakh.Name = "bntxoakh";
-            this.bntxoakh.Size = new System.Drawing.Size(112, 63);
-            this.bntxoakh.TabIndex = 2;
-            this.bntxoakh.Text = "Xóa";
-            this.bntxoakh.UseVisualStyleBackColor = true;
-            this.bntxoakh.Click += new System.EventHandler(this.bntxoakh_Click);
-            // 
-            // bntsuakh
-            // 
-            this.bntsuakh.Location = new System.Drawing.Point(171, 15);
-            this.bntsuakh.Name = "bntsuakh";
-            this.bntsuakh.Size = new System.Drawing.Size(112, 63);
-            this.bntsuakh.TabIndex = 1;
-            this.bntsuakh.Text = "Sửa";
-            this.bntsuakh.UseVisualStyleBackColor = true;
-            this.bntsuakh.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // bntthemkh
-            // 
-            this.bntthemkh.Location = new System.Drawing.Point(14, 15);
-            this.bntthemkh.Name = "bntthemkh";
-            this.bntthemkh.Size = new System.Drawing.Size(112, 63);
-            this.bntthemkh.TabIndex = 0;
-            this.bntthemkh.Text = "Thêm";
-            this.bntthemkh.UseVisualStyleBackColor = true;
-            this.bntthemkh.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // panel13
-            // 
-            this.panel13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel13.Controls.Add(this.datagvclient);
-            this.panel13.Location = new System.Drawing.Point(3, 104);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(751, 569);
-            this.panel13.TabIndex = 8;
-            // 
-            // datagvclient
-            // 
-            this.datagvclient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagvclient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12});
-            this.datagvclient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagvclient.Location = new System.Drawing.Point(0, 0);
-            this.datagvclient.Name = "datagvclient";
-            this.datagvclient.RowHeadersWidth = 51;
-            this.datagvclient.RowTemplate.Height = 41;
-            this.datagvclient.Size = new System.Drawing.Size(751, 569);
-            this.datagvclient.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Mã Khách Hàng";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 123;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Tên Khách Hàng";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 321;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "SDT";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Số Điện Thoại";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Diem";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Điểm";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 125;
-            // 
             // bntxoarongkh
             // 
             this.bntxoarongkh.Location = new System.Drawing.Point(16, 447);
@@ -1876,6 +1752,121 @@
             this.label21.TabIndex = 19;
             this.label21.Text = "ID:";
             // 
+            // panel14
+            // 
+            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel14.Controls.Add(this.bntxoakh);
+            this.panel14.Controls.Add(this.bntsuakh);
+            this.panel14.Controls.Add(this.bntthemkh);
+            this.panel14.Location = new System.Drawing.Point(0, 6);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(751, 92);
+            this.panel14.TabIndex = 9;
+            // 
+            // bntxoakh
+            // 
+            this.bntxoakh.Location = new System.Drawing.Point(329, 15);
+            this.bntxoakh.Name = "bntxoakh";
+            this.bntxoakh.Size = new System.Drawing.Size(112, 63);
+            this.bntxoakh.TabIndex = 2;
+            this.bntxoakh.Text = "Xóa";
+            this.bntxoakh.UseVisualStyleBackColor = true;
+            this.bntxoakh.Click += new System.EventHandler(this.bntxoakh_Click);
+            // 
+            // bntsuakh
+            // 
+            this.bntsuakh.Location = new System.Drawing.Point(171, 15);
+            this.bntsuakh.Name = "bntsuakh";
+            this.bntsuakh.Size = new System.Drawing.Size(112, 63);
+            this.bntsuakh.TabIndex = 1;
+            this.bntsuakh.Text = "Sửa";
+            this.bntsuakh.UseVisualStyleBackColor = true;
+            this.bntsuakh.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // bntthemkh
+            // 
+            this.bntthemkh.Location = new System.Drawing.Point(14, 15);
+            this.bntthemkh.Name = "bntthemkh";
+            this.bntthemkh.Size = new System.Drawing.Size(112, 63);
+            this.bntthemkh.TabIndex = 0;
+            this.bntthemkh.Text = "Thêm";
+            this.bntthemkh.UseVisualStyleBackColor = true;
+            this.bntthemkh.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // panel13
+            // 
+            this.panel13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel13.Controls.Add(this.datagvclient);
+            this.panel13.Location = new System.Drawing.Point(3, 104);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(751, 569);
+            this.panel13.TabIndex = 8;
+            // 
+            // datagvclient
+            // 
+            this.datagvclient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagvclient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            this.datagvclient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datagvclient.Location = new System.Drawing.Point(0, 0);
+            this.datagvclient.Name = "datagvclient";
+            this.datagvclient.RowHeadersWidth = 51;
+            this.datagvclient.RowTemplate.Height = 41;
+            this.datagvclient.Size = new System.Drawing.Size(751, 569);
+            this.datagvclient.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Mã Khách Hàng";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 127;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Tên Khách Hàng";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 321;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "SDT";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Số Điện Thoại";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Diem";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Điểm";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 125;
+            // 
+            // imgsp
+            // 
+            this.imgsp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgsp.Enabled = false;
+            this.imgsp.Location = new System.Drawing.Point(145, 18);
+            this.imgsp.MaximumSize = new System.Drawing.Size(187, 121);
+            this.imgsp.Name = "imgsp";
+            this.imgsp.Size = new System.Drawing.Size(187, 121);
+            this.imgsp.TabIndex = 18;
+            this.imgsp.TabStop = false;
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1915,7 +1906,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.datagvSP)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgsp)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -1935,6 +1925,7 @@
             this.panel14.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagvclient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgsp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2027,7 +2018,6 @@
         private System.Windows.Forms.DataGridView dategvImport;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Button btnview_import;
-        private System.Windows.Forms.Button btnedit_import;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -2055,7 +2045,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtlinkhinh;
         private System.Windows.Forms.ComboBox cbbdmsp;
-        private System.Windows.Forms.PictureBox imgsp;
         private System.Windows.Forms.RichTextBox txtnote;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -2097,5 +2086,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtidkh;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.PictureBox imgsp;
     }
 }

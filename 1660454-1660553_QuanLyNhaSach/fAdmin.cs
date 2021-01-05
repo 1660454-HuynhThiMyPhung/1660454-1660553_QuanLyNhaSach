@@ -20,6 +20,8 @@ namespace _1660454_1660553_QuanLyNhaSach
         BindingSource ReportDoanhthuList = new BindingSource();
         BindingSource StaffList = new BindingSource();
         BindingSource ClientList = new BindingSource();
+        BindingSource ImportList = new BindingSource();
+        BindingSource ReportStockList = new BindingSource();
 
         private Account loginAccount;
         internal Account LoginAccount
@@ -36,6 +38,7 @@ namespace _1660454_1660553_QuanLyNhaSach
             InitializeComponent();
             this.LoginAccount = acc;
             load();
+            imgsp.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void fAdmin_Load(object sender, EventArgs e)
@@ -48,6 +51,8 @@ namespace _1660454_1660553_QuanLyNhaSach
             datagvStaff.DataSource = StaffList;
             datareport_doanhthu.DataSource = ReportDoanhthuList;
             datagvclient.DataSource = ClientList;
+            dategvImport.DataSource = ImportList;
+            datareport_stock.DataSource = ReportStockList;
 
             QuanLy_Load();
 
@@ -55,6 +60,13 @@ namespace _1660454_1660553_QuanLyNhaSach
             Addsanphambinding();
             Addstaffbinding();
             AddClientbinding();
+            LoadCategoryIntoCombobox(cbbdmsp);
+        }
+        void LoadCategoryIntoCombobox(ComboBox cb)
+        {
+            cb.DataSource = CategoryDAO.Instance.GetListCategory();
+            cb.DisplayMember = "Name";
+            cb.ValueMember = "ID";
         }
         void QuanLy_Load()
         {
@@ -62,7 +74,31 @@ namespace _1660454_1660553_QuanLyNhaSach
             LoadListStaff();
             LoadListItems();
             LoadListClient();
+            LoadListImport();
             LoadListReportDoanhthu();
+            LoadListReportStock();
+
+        }
+        void LoadListReportStock()
+        {
+            ReportStockList.DataSource = ReportDAO.Instance.GetListItems();
+            this.datareport_stock.Columns["image"].Visible = false;
+        }
+        void LoadListImport()
+        {
+            dategvImport.AutoGenerateColumns = false;
+            ImportList.DataSource = ImportDAO.Instance.GetListImport();
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            btn.HeaderText = "Tác vụ";
+            btn.Text = "Xóa";
+            btn.Name = "btn";
+            btn.DisplayIndex = 5;
+            btn.UseColumnTextForButtonValue = true;
+            int columnIndex = 5;
+            if (dategvImport.Columns["btn"] == null)
+            {
+                dategvImport.Columns.Insert(columnIndex, btn);
+            }
         }
         void LoadListClient()
         {
@@ -145,11 +181,16 @@ namespace _1660454_1660553_QuanLyNhaSach
         }
         private void button20_Click(object sender, EventArgs e)
         {
-            fImportDetail f = new fImportDetail();
+            fImportDetail f = new fImportDetail("0", "");
+            f.FormClosed += F_FormClosed;
             f.ShowDialog();
         }
-
-       
+        private void F_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoadListImport();
+            dategvImport.Update();
+            dategvImport.Refresh();
+        }
 
         private void btnthem_Click(object sender, EventArgs e)
         {
@@ -496,6 +537,99 @@ namespace _1660454_1660553_QuanLyNhaSach
                 else
                 {
                     MessageBox.Show("Có lỗi khi xóa khách hàng");
+                }
+            }
+        }
+
+        private void btnview_import_Click(object sender, EventArgs e)
+        {
+            int id = dategvImport.CurrentCell.RowIndex;
+            string ld = dategvImport.Rows[id].Cells[0].Value.ToString();
+            fImportDetail f = new fImportDetail("3", ld);
+            f.ShowDialog();
+        }
+
+        private void dategvImport_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                string id = dategvImport.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                string idd = dategvImport.Rows[e.RowIndex].Cells[0].Value.ToString();
+                if (id == "Chưa Duyệt")
+                {
+                    if (MessageBox.Show("Bạn có muốn duyệt phiếu", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                    {
+                        if (ImportDAO.Instance.Comgim_import(idd, "+"))
+                        {
+                            MessageBox.Show("Duyệt thành công");
+                            LoadListImport();
+                            dategvImport.Update();
+                            dategvImport.Refresh();
+
+                            LoadListItems();
+                            datagvSP.Update();
+                            datagvSP.Refresh();
+
+                            LoadListReportStock();
+                            datareport_stock.Update();
+                            datareport_stock.Refresh();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Có lỗi khi duyệt");
+                        }
+                    }
+                }
+                if (id == "Đã Duyệt")
+                {
+                    if (MessageBox.Show("Bạn có muốn bỏ duyệt phiếu", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                    {
+                        if (ImportDAO.Instance.Comgim_import(idd, "-"))
+                        {
+                            MessageBox.Show("Bỏ duyệt thành công");
+                            LoadListImport();
+                            dategvImport.Update();
+                            dategvImport.Refresh();
+
+                            LoadListItems();
+                            datagvSP.Update();
+                            datagvSP.Refresh();
+
+                            LoadListReportStock();
+                            datareport_stock.Update();
+                            datareport_stock.Refresh();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Có lỗi khi bỏ duyệt");
+                        }
+                    }
+                }
+            }
+            if (e.ColumnIndex == 5)
+            {
+                string id = dategvImport.Rows[e.RowIndex].Cells[3].Value.ToString();
+                if (id == "Đã Duyệt")
+                {
+                    MessageBox.Show("Phiếu đã duyệt không thể xóa!");
+                }
+                else
+                {
+                    if (MessageBox.Show("Bạn có muốn xóa phiếu", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                    {
+                        string idd = dategvImport.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        if (ImportDAO.Instance.delete_import(idd))
+                        {
+                            MessageBox.Show("Xóa thành công");
+                            LoadListImport();
+                            dategvImport.Update();
+                            dategvImport.Refresh();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Có lỗi khi xóa phiếu nhập");
+                        }
+                    }
                 }
             }
         }

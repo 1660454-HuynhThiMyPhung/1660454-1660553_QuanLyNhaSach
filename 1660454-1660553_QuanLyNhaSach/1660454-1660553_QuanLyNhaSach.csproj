@@ -51,12 +51,15 @@
     <Compile Include="DAO\CategoryDAO.cs" />
     <Compile Include="DAO\ClientDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\ImportDAO.cs" />
     <Compile Include="DAO\ItemsDAO.cs" />
     <Compile Include="DAO\OrderDAO.cs" />
     <Compile Include="DAO\ReportDAO.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Category.cs" />
     <Compile Include="DTO\Client.cs" />
+    <Compile Include="DTO\Import.cs" />
+    <Compile Include="DTO\ItemImport.cs" />
     <Compile Include="DTO\Items.cs" />
     <Compile Include="DTO\POS.cs" />
     <Compile Include="DTO\Report.cs" />

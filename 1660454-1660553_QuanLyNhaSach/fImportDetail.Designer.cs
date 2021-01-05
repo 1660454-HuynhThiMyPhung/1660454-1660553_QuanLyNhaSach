@@ -31,9 +31,9 @@ namespace _1660454_1660553_QuanLyNhaSach
         {
             this.listView1 = new System.Windows.Forms.ListView();
             this.txtsearch = new System.Windows.Forms.TextBox();
-            this.button21 = new System.Windows.Forms.Button();
+            this.bnttimitems = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bntthemitemsimport = new System.Windows.Forms.Button();
             this.tonggian = new System.Windows.Forms.TextBox();
             this.slnhap = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -78,40 +78,42 @@ namespace _1660454_1660553_QuanLyNhaSach
             this.txtsearch.Size = new System.Drawing.Size(160, 30);
             this.txtsearch.TabIndex = 5;
             // 
-            // button21
+            // bnttimitems
             // 
-            this.button21.Location = new System.Drawing.Point(175, 20);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(69, 30);
-            this.button21.TabIndex = 6;
-            this.button21.Text = "Tìm";
-            this.button21.UseVisualStyleBackColor = true;
+            this.bnttimitems.Location = new System.Drawing.Point(175, 20);
+            this.bnttimitems.Name = "bnttimitems";
+            this.bnttimitems.Size = new System.Drawing.Size(69, 30);
+            this.bnttimitems.TabIndex = 6;
+            this.bnttimitems.Text = "Tìm";
+            this.bnttimitems.UseVisualStyleBackColor = true;
+            this.bnttimitems.Click += new System.EventHandler(this.bnttimitems_Click);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.bntthemitemsimport);
             this.panel1.Controls.Add(this.tonggian);
             this.panel1.Controls.Add(this.slnhap);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.button21);
+            this.panel1.Controls.Add(this.bnttimitems);
             this.panel1.Controls.Add(this.txtsearch);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(464, 467);
             this.panel1.TabIndex = 7;
             // 
-            // button1
+            // bntthemitemsimport
             // 
-            this.button1.Location = new System.Drawing.Point(301, 175);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 38);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bntthemitemsimport.Location = new System.Drawing.Point(301, 175);
+            this.bntthemitemsimport.Name = "bntthemitemsimport";
+            this.bntthemitemsimport.Size = new System.Drawing.Size(103, 38);
+            this.bntthemitemsimport.TabIndex = 13;
+            this.bntthemitemsimport.Text = "Thêm";
+            this.bntthemitemsimport.UseVisualStyleBackColor = true;
+            this.bntthemitemsimport.Click += new System.EventHandler(this.bntthemitemsimport_Click);
             // 
             // tonggian
             // 
@@ -248,6 +250,7 @@ namespace _1660454_1660553_QuanLyNhaSach
             this.close.TabIndex = 10;
             this.close.Text = "Thoát";
             this.close.UseVisualStyleBackColor = false;
+            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // save
             // 
@@ -259,6 +262,7 @@ namespace _1660454_1660553_QuanLyNhaSach
             this.save.TabIndex = 11;
             this.save.Text = "Lưu";
             this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // txtnote
             // 
@@ -307,9 +311,9 @@ namespace _1660454_1660553_QuanLyNhaSach
         #endregion
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TextBox txtsearch;
-        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button bnttimitems;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bntthemitemsimport;
         private System.Windows.Forms.TextBox tonggian;
         private System.Windows.Forms.TextBox slnhap;
         private System.Windows.Forms.Label label4;
