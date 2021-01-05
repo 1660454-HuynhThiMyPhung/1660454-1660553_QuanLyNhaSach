@@ -1076,7 +1076,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.label19.Location = new System.Drawing.Point(28, 398);
+            this.label19.Location = new System.Drawing.Point(27, 398);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(180, 25);
             this.label19.TabIndex = 17;
@@ -1085,9 +1085,9 @@
             // txtstock_mini
             // 
             this.txtstock_mini.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtstock_mini.Location = new System.Drawing.Point(214, 398);
+            this.txtstock_mini.Location = new System.Drawing.Point(225, 398);
             this.txtstock_mini.Name = "txtstock_mini";
-            this.txtstock_mini.Size = new System.Drawing.Size(222, 30);
+            this.txtstock_mini.Size = new System.Drawing.Size(211, 30);
             this.txtstock_mini.TabIndex = 16;
             // 
             // bntxoarongsp
@@ -1121,7 +1121,7 @@
             // 
             this.cbbdmsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbdmsp.FormattingEnabled = true;
-            this.cbbdmsp.Location = new System.Drawing.Point(190, 341);
+            this.cbbdmsp.Location = new System.Drawing.Point(190, 348);
             this.cbbdmsp.Name = "cbbdmsp";
             this.cbbdmsp.Size = new System.Drawing.Size(246, 30);
             this.cbbdmsp.TabIndex = 12;
@@ -1148,7 +1148,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.label6.Location = new System.Drawing.Point(27, 346);
+            this.label6.Location = new System.Drawing.Point(27, 353);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(116, 25);
             this.label6.TabIndex = 6;
