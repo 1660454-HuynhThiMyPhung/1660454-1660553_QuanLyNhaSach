@@ -230,7 +230,7 @@ namespace _1660454_1660553_QuanLyNhaSach
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fAdmin f = new fAdmin();
+            fAdmin f = new fAdmin(loginAccount);
             f.ShowDialog();
         }
 

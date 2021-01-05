@@ -80,5 +80,56 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
 
             return total;
         }
+        public bool UpdateAccount_main(string userName, string newPass, string account, int role, int ID)
+        {
+            int result = DataProvider.Instance.ExecuteNonQuery("UPDATE userd set name = N'" + userName + "' , account = '" + account + "' ,password = '" + newPass + "', role = " + role + " where id = " + ID);
+            return result > 0;
+        }
+        public bool UpdateAccount_main_nopass(string userName, string account, int role, int ID)
+        {
+            int result = DataProvider.Instance.ExecuteNonQuery("UPDATE userd set name = N'" + userName + "' , account = '" + account + "' , role = " + role + " where id = " + ID);
+            return result > 0;
+        }
+        public bool AddAccount_main(string userName, string newPass, string account, int role)
+        {
+            string query = string.Format("INSERT into userd values (N'" + userName + "','" + account + "','" + newPass + "','" + role + "')");
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public string Getprefix()
+        {
+            string query = "select * from userd";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            string g = "";
+
+            if ((data.Rows.Count <= 0))
+            {
+                return "1";
+            }
+            else
+            {
+                int k;
+                g = "NK";
+                k = Convert.ToInt32(data.Rows[data.Rows.Count - 1][0].ToString().Substring(2, 2));
+                k = k + 1;
+                if (k <= 9)
+                {
+                    g = g + "0";
+                    g = g + k.ToString();
+                }
+                else
+                {
+                    g = g + k.ToString();
+                }
+                return g;
+            }
+        }
+        public bool DeleteNV(int id)
+        {
+            string query = string.Format("Delete userd where id = " + id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
     }
 }

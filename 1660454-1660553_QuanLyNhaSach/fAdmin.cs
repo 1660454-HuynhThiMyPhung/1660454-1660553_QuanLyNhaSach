@@ -18,11 +18,23 @@ namespace _1660454_1660553_QuanLyNhaSach
         BindingSource CategoryList = new BindingSource();
         BindingSource ItemsList = new BindingSource();
         BindingSource ReportDoanhthuList = new BindingSource();
+        BindingSource StaffList = new BindingSource();
+        BindingSource ClientList = new BindingSource();
 
+        private Account loginAccount;
+        internal Account LoginAccount
+        {
+            get => loginAccount;
+            set
+            {
+                loginAccount = value;
+            }
+        }
 
-        public fAdmin()
+        public fAdmin(Account acc)
         {
             InitializeComponent();
+            this.LoginAccount = acc;
             load();
         }
 
@@ -33,20 +45,77 @@ namespace _1660454_1660553_QuanLyNhaSach
         {
             datagvDM.DataSource = CategoryList;
             datagvSP.DataSource = ItemsList;
+            datagvStaff.DataSource = StaffList;
             datareport_doanhthu.DataSource = ReportDoanhthuList;
+            datagvclient.DataSource = ClientList;
 
             QuanLy_Load();
 
             Adddanhmucbinding();
             Addsanphambinding();
-
+            Addstaffbinding();
+            AddClientbinding();
         }
         void QuanLy_Load()
         {
             LoadListCategory();
+            LoadListStaff();
             LoadListItems();
+            LoadListClient();
             LoadListReportDoanhthu();
         }
+        void LoadListClient()
+        {
+            DataTable dt = new DataTable();
+            dt.Clear();
+            DataRow row = dt.NewRow();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("Name");
+            row["ID"] = "Nam";
+            row["Name"] = "Nam";
+            dt.Rows.Add(row);
+            DataRow rows = dt.NewRow();
+            rows["ID"] = "Nữ";
+            rows["Name"] = "Nữ";
+            dt.Rows.Add(rows);
+            cbbsex.DataSource = dt;
+            cbbsex.DisplayMember = "Name";
+            ClientList.DataSource = ClientDAO.Instance.GetListClient();
+        }
+        void AddClientbinding()
+        {
+            txtidkh.DataBindings.Add(new Binding("Text", datagvclient.DataSource, "ID", true, DataSourceUpdateMode.Never));
+            txttenkh.DataBindings.Add(new Binding("Text", datagvclient.DataSource, "Name", true, DataSourceUpdateMode.Never));
+            txtsdtkh.DataBindings.Add(new Binding("Text", datagvclient.DataSource, "SDT", true, DataSourceUpdateMode.Never));
+            txtemail.DataBindings.Add(new Binding("Text", datagvclient.DataSource, "Email", true, DataSourceUpdateMode.Never));
+            txtdiachi.DataBindings.Add(new Binding("Text", datagvclient.DataSource, "Address", true, DataSourceUpdateMode.Never));
+        }
+        void LoadListStaff()
+        {
+            DataTable dt = new DataTable();
+            dt.Clear();
+            DataRow row = dt.NewRow();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("Name");
+            row["ID"] = 1;
+            row["Name"] = "Admin";
+            dt.Rows.Add(row);
+            DataRow rows = dt.NewRow();
+            rows["ID"] = 2;
+            rows["Name"] = "Nhân viên";
+            dt.Rows.Add(rows);
+            cbbcv.DataSource = dt;
+            cbbcv.DisplayMember = "Name";
+            StaffList.DataSource = AccountDAO.Instance.GetListStaff();
+            this.datagvStaff.Columns["Password"].Visible = false;
+        }
+        void Addstaffbinding()
+        {
+            txtidstaff.DataBindings.Add(new Binding("Text", datagvStaff.DataSource, "ID", true, DataSourceUpdateMode.Never));
+            txtnamestaff.DataBindings.Add(new Binding("Text", datagvStaff.DataSource, "UserName", true, DataSourceUpdateMode.Never));
+            txtaccountstaff.DataBindings.Add(new Binding("Text", datagvStaff.DataSource, "Accounts", true, DataSourceUpdateMode.Never));
+        }
+
         void LoadListReportDoanhthu()
         {
             datareport_doanhthu.DataSource = ReportDAO.Instance.GetListDoanhThu();
@@ -236,6 +305,198 @@ namespace _1660454_1660553_QuanLyNhaSach
             {
                 fPosDetail f = new fPosDetail(ld, discount, client);
                 f.ShowDialog();
+            }
+        }
+
+        private void btnxoarongnv_Click(object sender, EventArgs e)
+        {
+            txtnamestaff.Text = "";
+            txtmknv.Text = "";
+            txtaccountstaff.Text = "";
+            txtidstaff.Text = "";
+        }
+
+        private void btnthemnv_Click(object sender, EventArgs e)
+        {
+            if (txtnamestaff.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập tên nhân viên");
+                return;
+            }
+            if (txtaccountstaff.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập account nhân viên");
+                return;
+            }
+            if (txtmknv.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập mật khẩu nhân viên");
+                return;
+            }
+            int selectedIndex = cbbcv.SelectedIndex;
+            int selectedValue = 2;
+            if (selectedIndex == 0)
+            {
+                selectedValue = 1;
+            }
+            if (AccountDAO.Instance.AddAccount_main(txtnamestaff.Text, Session.GetMD5(txtmknv.Text), txtaccountstaff.Text, selectedValue))
+            {
+                LoadListStaff();
+                datagvStaff.Update();
+                datagvStaff.Refresh();
+                MessageBox.Show("Thêm thành công");
+                //if (updateAccount != null)
+                //{
+                //    updateAccount(this, new AccountEvent(AccountDAO.Instance.GetAccountByUserName(LoginAccount.Accounts)));
+                //}
+            }
+        }
+
+        private void bntsuanv_Click(object sender, EventArgs e)
+        {
+            if (txtidstaff.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn lại nhân viên cần sửa");
+                return;
+            }
+            if (txtnamestaff.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập tên nhân viên");
+                return;
+            }
+            if (txtaccountstaff.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập account nhân viên");
+                return;
+            }
+            int selectedIndex = cbbcv.SelectedIndex;
+            int selectedValue = 2;
+            if (selectedIndex == 0)
+            {
+                selectedValue = 1;
+            }
+            if (txtmknv.Text != "" && txtmknv.Text != null)
+            {
+                if (AccountDAO.Instance.UpdateAccount_main(txtnamestaff.Text, Session.GetMD5(txtmknv.Text), txtaccountstaff.Text, selectedValue, int.Parse(txtidstaff.Text)))
+                {
+                    LoadListStaff();
+                    datagvStaff.Update();
+                    datagvStaff.Refresh();
+                    MessageBox.Show("Cập nhật thành công");
+                    //if (updateAccount != null)
+                    //{
+                    //    updateAccount(this, new AccountEvent(AccountDAO.Instance.GetAccountByUserName(LoginAccount.Accounts)));
+                    //}
+                }
+            }
+            else
+            {
+
+                if (AccountDAO.Instance.UpdateAccount_main_nopass(txtnamestaff.Text, txtaccountstaff.Text, selectedValue, int.Parse(txtidstaff.Text)))
+                {
+                    LoadListStaff();
+                    datagvStaff.Update();
+                    datagvStaff.Refresh();
+                    MessageBox.Show("Cập nhật thành công");
+                }
+            }
+        }
+
+        private void bntxoanv_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtidstaff.Text);
+            if (id == loginAccount.ID)
+            {
+                MessageBox.Show("Bạn không thể xóa bạn");
+                return;
+            }
+            if (AccountDAO.Instance.DeleteNV(id))
+            {
+                MessageBox.Show("Xóa nhân viên thành công");
+                LoadListStaff();
+                datagvStaff.Update();
+                datagvStaff.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi xóa nhân viên");
+            }
+        }
+
+        private void bntxoarongkh_Click(object sender, EventArgs e)
+        {
+            txttenkh.Text = "";
+            txtsdtkh.Text = "";
+            txtemail.Text = "";
+            txtdiachi.Text = "";
+            txtidkh.Text = "";
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            if (txtsdtkh.Text == "" || txttenkh.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập tên hoặc số điện thoại");
+            }
+            else
+            {
+                if (ClientDAO.Instance.GetItemsByID(txtsdtkh.Text) == null)
+                {
+                    if (ClientDAO.Instance.InsertClient(txttenkh.Text, txtsdtkh.Text, txtemail.Text, txtdiachi.Text, cbbsex.Text))
+                    {
+                        MessageBox.Show("Thêm thành công");
+                        LoadListClient();
+                        datagvclient.Update();
+                        datagvclient.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm không thành công");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại đã tồn tại");
+                }
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (txtsdtkh.Text == "" || txttenkh.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập tên hoặc số điện thoại");
+                return;
+            }
+            if (ClientDAO.Instance.UpdateClient(txttenkh.Text, txtsdtkh.Text, txtemail.Text, txtdiachi.Text, cbbsex.Text, txtidkh.Text))
+            {
+                MessageBox.Show("Sửa thành công");
+                LoadListClient();
+                datagvclient.Update();
+                datagvclient.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Sửa không thành công");
+            }
+        }
+
+        private void bntxoakh_Click(object sender, EventArgs e)
+        {
+            string id = txtidkh.Text;
+            if (MessageBox.Show("Bạn có muốn xóa", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                if (ClientDAO.Instance.DeleteKH(id))
+                {
+                    MessageBox.Show("Xóa khách hàng thành công");
+                    LoadListClient();
+                    datagvclient.Update();
+                    datagvclient.Refresh();
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi xóa khách hàng");
+                }
             }
         }
     }

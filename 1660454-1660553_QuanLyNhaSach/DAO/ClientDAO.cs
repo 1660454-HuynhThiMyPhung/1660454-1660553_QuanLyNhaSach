@@ -50,7 +50,18 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+        public bool UpdateClient(string name, string sdt, string email, string address, string sex, string id)
+        {
 
+            int result = DataProvider.Instance.ExecuteNonQuery("UPDATE Khach_Hang set Ten_KH = N'" + name + "' , SDT_KH = '" + sdt + "' , DiaChi = N'" + address + "', Sex = N'" + sex + "', Email = N'" + email + "' where Ma_KH = '" + id + "'");
+            return result > 0;
+        }
+        public bool DeleteKH(string id)
+        {
+            string query = string.Format("Delete Khach_Hang where Ma_KH = '" + id + "'");
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
         public string Getprefix()
 
         {
