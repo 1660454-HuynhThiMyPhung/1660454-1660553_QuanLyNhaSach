@@ -19,7 +19,7 @@ namespace _1660454_1660553_QuanLyNhaSach.DTO
         }
         public Account(DataRow row)
         {
-            this.UserName = row["name"].ToString();
+            this.UserName = row["name"].ToString().Trim();
             this.Accounts = row["account"].ToString();
             this.Role = (int)row["role"];
             this.Password = row["password"].ToString();

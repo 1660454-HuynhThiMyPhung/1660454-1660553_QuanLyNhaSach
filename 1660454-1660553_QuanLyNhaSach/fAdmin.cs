@@ -155,6 +155,9 @@ namespace _1660454_1660553_QuanLyNhaSach
         void LoadListReportDoanhthu()
         {
             datareport_doanhthu.DataSource = ReportDAO.Instance.GetListDoanhThu();
+            ccblocnv.DataSource = AccountDAO.Instance.GetListStaff();
+            ccblocnv.DisplayMember = "UserName";
+            ccblocnv.ValueMember = "ID";
         }
         void LoadListItems()
         {
@@ -631,6 +634,65 @@ namespace _1660454_1660553_QuanLyNhaSach
                         }
                     }
                 }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string kh = txtsearchsdttenkh.Text;
+            string nv = ccblocnv.SelectedValue.ToString();
+            string datestart = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            string dateend = dateTimePicker2.Value.ToString("yyyy-MM-dd");
+            datareport_doanhthu.DataSource = ReportDAO.Instance.GetListDoanhThu(kh, nv, datestart, dateend);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            datareport_doanhthu.DataSource = ReportDAO.Instance.GetListDoanhThu();
+
+        }
+
+        private void btnsearchreportstock_Click(object sender, EventArgs e)
+        {
+            string item = txtimitemsreportstock.Text;
+            ReportStockList.DataSource = ReportDAO.Instance.GetListItems(item);
+            this.datareport_stock.Columns["image"].Visible = false;
+        }
+
+        private void bntlocimport_Click(object sender, EventArgs e)
+        {
+            string item = txtitemsimport.Text;
+            string datestart = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            string dateend = dateTimePicker2.Value.ToString("yyyy-MM-dd");
+            dategvImport.AutoGenerateColumns = false;
+            ImportList.DataSource = ImportDAO.Instance.GetListImport(item, datestart, dateend);
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            btn.HeaderText = "Tác vụ";
+            btn.Text = "Xóa";
+            btn.Name = "btn";
+            btn.DisplayIndex = 5;
+            btn.UseColumnTextForButtonValue = true;
+            int columnIndex = 5;
+            if (dategvImport.Columns["btn"] == null)
+            {
+                dategvImport.Columns.Insert(columnIndex, btn);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            dategvImport.AutoGenerateColumns = false;
+            ImportList.DataSource = ImportDAO.Instance.GetListImport();
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            btn.HeaderText = "Tác vụ";
+            btn.Text = "Xóa";
+            btn.Name = "btn";
+            btn.DisplayIndex = 5;
+            btn.UseColumnTextForButtonValue = true;
+            int columnIndex = 5;
+            if (dategvImport.Columns["btn"] == null)
+            {
+                dategvImport.Columns.Insert(columnIndex, btn);
             }
         }
     }

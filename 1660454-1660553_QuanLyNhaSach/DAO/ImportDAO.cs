@@ -47,11 +47,30 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
             }
             return true;
         }
-        public List<Import> GetListImport()
+        public List<Import> GetListImport(string items = "", string datestart = "", string dateend = "")
         {
             List<Import> list = new List<Import>();
+            string text = "  ";
+            if (items != "")
+            {
+                text += " where ";
 
-            string query = "select * from Imports";
+                text += "  Imports.ID LIKE N'%" + items + "%' and  ";
+
+            }
+            if (datestart != "")
+            {
+                if (items == "")
+                {
+                    text += " where ";
+                }
+                text += " Imports.date >= '" + datestart + "' ";
+            }
+            if (dateend != "")
+            {
+                text += " and Imports.date <= '" + dateend + "' ";
+            }
+            string query = "select * from Imports " + text;
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 

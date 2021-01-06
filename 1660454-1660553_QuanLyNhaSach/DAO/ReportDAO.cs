@@ -17,11 +17,15 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
 
         private ReportDAO() { }
 
-        public List<Items> GetListItems()
+        public List<Items> GetListItems(string items = "")
         {
             List<Items> list = new List<Items>();
-
-            string query = "select * from San_Pham where stock < stock_mini";
+            string text = "";
+            if (items != "")
+            {
+                text += " and San_Pham.Ten_SP LIKE N'%" + items + "%'";
+            }
+            string query = "select * from San_Pham where stock < stock_mini " + text;
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             data.Columns.Add("avatar", Type.GetType("System.Byte[]"));
@@ -41,10 +45,27 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
 
             return list;
         }
-        public List<Report> GetListDoanhThu()
+        public List<Report> GetListDoanhThu(string kh = "",string nv = "",string datestart = "",string dateend = "")
         {
             List<Report> list = new List<Report>();
-            string query = "select dh.ID,dh.date,dh.discount,dh.total_discount,dh.total,kh.Ma_KH,kh.Ten_KH as Name_client,nv.name as Name_nv from Don_Hang dh,Khach_Hang kh,userd nv where dh.ID_NV = nv.id and dh.ID_KH = kh.Ma_KH";
+            string text = "";
+            if(kh != "")
+            {
+                text += " and (kh.Ten_KH LIKE N'%"+ kh + "%' or kh.SDT_KH LIKE N'%" + kh + "%') ";
+            }
+            if (nv != "")
+            {
+                text += " and nv.id = " + nv + " ";
+            }
+            if (datestart != "")
+            {
+                text += " and dh.date >= '" + datestart + "' ";
+            }
+            if (dateend != "")
+            {
+                text += " and dh.date <= '" + dateend + "' ";
+            }
+            string query = "select dh.ID,dh.date,dh.discount,dh.total_discount,dh.total,kh.Ma_KH,kh.Ten_KH as Name_client,nv.name as Name_nv from Don_Hang dh,Khach_Hang kh,userd nv where dh.ID_NV = nv.id and dh.ID_KH = kh.Ma_KH " + text;
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
