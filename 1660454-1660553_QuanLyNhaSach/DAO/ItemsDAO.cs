@@ -17,11 +17,15 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
     
         private ItemsDAO() { }
 
-        public List<Items> GetListItems()
+        public List<Items> GetListItems(string id = "")
         {
             List<Items> list = new List<Items>();
-
-            string query = "select * from San_Pham";
+            string text = "";
+            if (id != "")
+            {
+                text += " where San_Pham.Ten_SP LIKE N'%" + id + "%'";
+            }
+            string query = "select * from San_Pham " + text;
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             data.Columns.Add("avatar", Type.GetType("System.Byte[]"));
@@ -120,6 +124,22 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
             string query = string.Format("Delete San_Pham where Ma_SP = '" + id + "'");
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
+        }
+        public bool TestSP(string id)
+        {
+            string query = "select * from SO_detail where MA_SP = '" + id + "'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            if(data.Rows.Count > 0)
+            {
+                return true;
+            }
+            string querys = "select * from ImportDetail where MA_SP = '" + id + "'";
+            DataTable datas = DataProvider.Instance.ExecuteQuery(querys);
+            if (datas.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
         }
         public string Getprefix()
 

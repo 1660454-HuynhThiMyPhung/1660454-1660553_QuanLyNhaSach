@@ -18,11 +18,15 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
             private set { ClientDAO.instance = value; }
         }
         private ClientDAO() { }
-        public List<Client> GetListClient()
+        public List<Client> GetListClient(string name = "")
         {
             List<Client> list = new List<Client>();
-
-            string query = "select * from Khach_Hang";
+            string text = "";
+            if (name != "")
+            {
+                text += " where Khach_Hang.Ten_KH LIKE N'%" + name + "%' or Khach_Hang.SDT_KH LIKE N'%" + name + "%'";
+            }
+            string query = "select * from Khach_Hang "+ text;
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
@@ -76,6 +80,17 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+        public bool TestKH(string id)
+        {
+            string querys = "select * from Don_Hang where ID_KH = '" + id + "'";
+            DataTable datas = DataProvider.Instance.ExecuteQuery(querys);
+            if (datas.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        
         public string Getprefix()
 
         {

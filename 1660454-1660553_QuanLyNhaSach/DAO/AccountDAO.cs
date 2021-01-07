@@ -20,11 +20,15 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
 
         private AccountDAO() { }
 
-        public List<Account> GetListStaff()
+        public List<Account> GetListStaff(string id = "")
         {
             List<Account> list = new List<Account>();
-
-            string query = "select * from userd";
+            string text = "";
+            if (id != "")
+            {
+                text += " where userd.name LIKE N'%" + id + "%'";
+            }
+            string query = "select * from userd "+ text;
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
@@ -128,6 +132,12 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
         public bool DeleteNV(int id)
         {
             string query = string.Format("Delete userd where id = " + id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool TestNV(int id)
+        {
+            string query = string.Format("Don_Hang userd where ID_NV = " + id);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

@@ -72,6 +72,17 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+        public bool TestDM(string id)
+        {
+            string querys = "select * from San_Pham where Ma_DM = '" + id + "'";
+            DataTable datas = DataProvider.Instance.ExecuteQuery(querys);
+            if (datas.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public string Getprefix()
         {
             string query = "select * from Danh_Muc";

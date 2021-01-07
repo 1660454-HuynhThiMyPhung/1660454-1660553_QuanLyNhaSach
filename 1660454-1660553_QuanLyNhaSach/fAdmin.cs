@@ -232,17 +232,26 @@ namespace _1660454_1660553_QuanLyNhaSach
         private void bntxoa_Click(object sender, EventArgs e)
         {
             string id = txtiddm.Text;
-
-            if (CategoryDAO.Instance.DeleteCategory(id))
+            if (MessageBox.Show("Bạn có muốn xóa", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                MessageBox.Show("Xóa danh mục thành công");
-                LoadListCategory();
-                //if (deleteFood != null)
-                //    deleteFood(this, new EventArgs());
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi khi xóa danh mục");
+                if (!CategoryDAO.Instance.TestDM(id))
+                {
+                    if (CategoryDAO.Instance.DeleteCategory(id))
+                    {
+                        MessageBox.Show("Xóa danh mục thành công");
+                        LoadListCategory();
+                        //if (deleteFood != null)
+                        //    deleteFood(this, new EventArgs());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi khi xóa danh mục");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Danh mục đã được sử dụng không thể xóa");
+                }
             }
         }
 
@@ -319,16 +328,23 @@ namespace _1660454_1660553_QuanLyNhaSach
             string id = txtidsp.Text;
             if (MessageBox.Show("Bạn có muốn xóa", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                if (ItemsDAO.Instance.DeleteSP(id))
+                if (!ItemsDAO.Instance.TestSP(id))
                 {
-                    MessageBox.Show("Xóa sản phẩm thành công");
-                    LoadListItems();
-                    datagvSP.Update();
-                    datagvSP.Refresh();
+                    if (ItemsDAO.Instance.DeleteSP(id))
+                    {
+                        MessageBox.Show("Xóa sản phẩm thành công");
+                        LoadListItems();
+                        datagvSP.Update();
+                        datagvSP.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi khi xóa sản phẩm");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Có lỗi khi xóa sản phẩm");
+                    MessageBox.Show("Sản phẩm đã được sử dụng không thể xóa");
                 }
             }
         }
@@ -454,16 +470,26 @@ namespace _1660454_1660553_QuanLyNhaSach
                 MessageBox.Show("Bạn không thể xóa bạn");
                 return;
             }
-            if (AccountDAO.Instance.DeleteNV(id))
+            if (MessageBox.Show("Bạn có muốn xóa", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                MessageBox.Show("Xóa nhân viên thành công");
-                LoadListStaff();
-                datagvStaff.Update();
-                datagvStaff.Refresh();
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi khi xóa nhân viên");
+                if (!AccountDAO.Instance.TestNV(id))
+                {
+                    if (AccountDAO.Instance.DeleteNV(id))
+                    {
+                        MessageBox.Show("Xóa nhân viên thành công");
+                        LoadListStaff();
+                        datagvStaff.Update();
+                        datagvStaff.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi khi xóa nhân viên");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Nhân viên đã có dữ liệu bán hàng không thể xóa");
+                }
             }
         }
 
@@ -530,16 +556,23 @@ namespace _1660454_1660553_QuanLyNhaSach
             string id = txtidkh.Text;
             if (MessageBox.Show("Bạn có muốn xóa", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                if (ClientDAO.Instance.DeleteKH(id))
+                if (!ClientDAO.Instance.TestKH(id))
                 {
-                    MessageBox.Show("Xóa khách hàng thành công");
-                    LoadListClient();
-                    datagvclient.Update();
-                    datagvclient.Refresh();
+                    if (ClientDAO.Instance.DeleteKH(id))
+                    {
+                        MessageBox.Show("Xóa khách hàng thành công");
+                        LoadListClient();
+                        datagvclient.Update();
+                        datagvclient.Refresh();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi khi xóa khách hàng");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Có lỗi khi xóa khách hàng");
+                    MessageBox.Show("Khách hàng đã mua hàng không thể xóa");
                 }
             }
         }
@@ -694,6 +727,49 @@ namespace _1660454_1660553_QuanLyNhaSach
             {
                 dategvImport.Columns.Insert(columnIndex, btn);
             }
+        }
+
+        private void bntimsach_Click(object sender, EventArgs e)
+        {
+            string timsach = txttimsach.Text;
+            ItemsList.DataSource = ItemsDAO.Instance.GetListItems(timsach);
+            this.datagvSP.Columns["image"].Visible = false;
+        }
+
+        private void bntxoarongsp_Click(object sender, EventArgs e)
+        {
+            txtidsp.Text = "";
+            txttensp.Text = "";
+            txtprice.Text = "";
+            txtnote.Text = "";
+
+            imgsp.Image = null;
+            imgsp.Invalidate();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *png)| *.jpg; *.jpeg; *png;";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                txtlinkhinh.Text = open.FileName;
+                imgsp.Image = new Bitmap(open.FileName);
+            }
+        }
+
+        private void bnttimkhachhang_Click(object sender, EventArgs e)
+        {
+            string name = txttimkiemkh.Text;
+            ClientList.DataSource = ClientDAO.Instance.GetListClient(name);
+
+        }
+
+        private void bntimnv_Click(object sender, EventArgs e)
+        {
+            string txttimn = txttimnv.Text;
+            StaffList.DataSource = AccountDAO.Instance.GetListStaff(txttimn);
+            this.datagvStaff.Columns["Password"].Visible = false;
         }
     }
 }

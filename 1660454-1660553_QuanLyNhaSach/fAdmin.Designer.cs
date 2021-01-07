@@ -70,6 +70,11 @@
             this.btnsearchreportstock = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel19 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.txtitemsimport = new System.Windows.Forms.TextBox();
             this.bntlocimport = new System.Windows.Forms.Button();
@@ -130,8 +135,8 @@
             this.txtidsp = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.txttimsach = new System.Windows.Forms.TextBox();
+            this.bntimsach = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnxoasp = new System.Windows.Forms.Button();
             this.btnsuasanpham = new System.Windows.Forms.Button();
@@ -156,16 +161,16 @@
             this.txtidstaff = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button11 = new System.Windows.Forms.Button();
+            this.txttimnv = new System.Windows.Forms.TextBox();
+            this.bntimnv = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.bntxoanv = new System.Windows.Forms.Button();
             this.bntsuanv = new System.Windows.Forms.Button();
             this.btnthemnv = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button16 = new System.Windows.Forms.Button();
+            this.txttimkiemkh = new System.Windows.Forms.TextBox();
+            this.bnttimkhachhang = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.bntxoarongkh = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
@@ -190,11 +195,6 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel23.SuspendLayout();
@@ -682,6 +682,57 @@
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(887, 92);
             this.panel19.TabIndex = 10;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Location = new System.Drawing.Point(778, 18);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 63);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "Hủy tìm";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(278, 12);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(73, 17);
+            this.label26.TabIndex = 14;
+            this.label26.Text = "Đến ngày:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(133, 12);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(64, 17);
+            this.label27.TabIndex = 13;
+            this.label27.Text = "Từ ngày:";
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker4.Location = new System.Drawing.Point(281, 36);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(104, 22);
+            this.dateTimePicker4.TabIndex = 12;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker3.Location = new System.Drawing.Point(136, 36);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(112, 22);
+            this.dateTimePicker3.TabIndex = 11;
             // 
             // label13
             // 
@@ -1200,6 +1251,7 @@
             this.bntxoarongsp.TabIndex = 15;
             this.bntxoarongsp.Text = "Xóa rỗng";
             this.bntxoarongsp.UseVisualStyleBackColor = true;
+            this.bntxoarongsp.Click += new System.EventHandler(this.bntxoarongsp_Click);
             // 
             // button1
             // 
@@ -1209,6 +1261,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Upload File";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtlinkhinh
             // 
@@ -1315,35 +1368,36 @@
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel6.Controls.Add(this.textBox2);
-            this.panel6.Controls.Add(this.button6);
+            this.panel6.Controls.Add(this.txttimsach);
+            this.panel6.Controls.Add(this.bntimsach);
             this.panel6.Location = new System.Drawing.Point(763, 6);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(448, 92);
             this.panel6.TabIndex = 5;
             // 
-            // textBox2
+            // txttimsach
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txttimsach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(13, 28);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(305, 30);
-            this.textBox2.TabIndex = 4;
+            this.txttimsach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttimsach.Location = new System.Drawing.Point(13, 28);
+            this.txttimsach.Name = "txttimsach";
+            this.txttimsach.Size = new System.Drawing.Size(305, 30);
+            this.txttimsach.TabIndex = 4;
             // 
-            // button6
+            // bntimsach
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.bntimsach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(324, 15);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(112, 63);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "Tìm";
-            this.button6.UseVisualStyleBackColor = true;
+            this.bntimsach.Location = new System.Drawing.Point(324, 15);
+            this.bntimsach.Name = "bntimsach";
+            this.bntimsach.Size = new System.Drawing.Size(112, 63);
+            this.bntimsach.TabIndex = 3;
+            this.bntimsach.Text = "Tìm";
+            this.bntimsach.UseVisualStyleBackColor = true;
+            this.bntimsach.Click += new System.EventHandler(this.bntimsach_Click);
             // 
             // panel5
             // 
@@ -1590,35 +1644,36 @@
             // 
             this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel10.Controls.Add(this.textBox3);
-            this.panel10.Controls.Add(this.button11);
+            this.panel10.Controls.Add(this.txttimnv);
+            this.panel10.Controls.Add(this.bntimnv);
             this.panel10.Location = new System.Drawing.Point(763, 6);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(448, 92);
             this.panel10.TabIndex = 6;
             // 
-            // textBox3
+            // txttimnv
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txttimnv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(13, 28);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(305, 30);
-            this.textBox3.TabIndex = 4;
+            this.txttimnv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttimnv.Location = new System.Drawing.Point(13, 28);
+            this.txttimnv.Name = "txttimnv";
+            this.txttimnv.Size = new System.Drawing.Size(305, 30);
+            this.txttimnv.TabIndex = 4;
             // 
-            // button11
+            // bntimnv
             // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.bntimnv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.Location = new System.Drawing.Point(324, 15);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(112, 63);
-            this.button11.TabIndex = 3;
-            this.button11.Text = "Tìm";
-            this.button11.UseVisualStyleBackColor = true;
+            this.bntimnv.Location = new System.Drawing.Point(324, 15);
+            this.bntimnv.Name = "bntimnv";
+            this.bntimnv.Size = new System.Drawing.Size(112, 63);
+            this.bntimnv.TabIndex = 3;
+            this.bntimnv.Text = "Tìm";
+            this.bntimnv.UseVisualStyleBackColor = true;
+            this.bntimnv.Click += new System.EventHandler(this.bntimnv_Click);
             // 
             // panel9
             // 
@@ -1681,35 +1736,36 @@
             // 
             this.panel16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel16.Controls.Add(this.textBox9);
-            this.panel16.Controls.Add(this.button16);
+            this.panel16.Controls.Add(this.txttimkiemkh);
+            this.panel16.Controls.Add(this.bnttimkhachhang);
             this.panel16.Location = new System.Drawing.Point(760, 6);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(448, 92);
             this.panel16.TabIndex = 11;
             // 
-            // textBox9
+            // txttimkiemkh
             // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txttimkiemkh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(13, 28);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(305, 30);
-            this.textBox9.TabIndex = 4;
+            this.txttimkiemkh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttimkiemkh.Location = new System.Drawing.Point(13, 28);
+            this.txttimkiemkh.Name = "txttimkiemkh";
+            this.txttimkiemkh.Size = new System.Drawing.Size(305, 30);
+            this.txttimkiemkh.TabIndex = 4;
             // 
-            // button16
+            // bnttimkhachhang
             // 
-            this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.bnttimkhachhang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button16.Location = new System.Drawing.Point(324, 15);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(112, 63);
-            this.button16.TabIndex = 3;
-            this.button16.Text = "Tìm";
-            this.button16.UseVisualStyleBackColor = true;
+            this.bnttimkhachhang.Location = new System.Drawing.Point(324, 15);
+            this.bnttimkhachhang.Name = "bnttimkhachhang";
+            this.bnttimkhachhang.Size = new System.Drawing.Size(112, 63);
+            this.bnttimkhachhang.TabIndex = 3;
+            this.bnttimkhachhang.Text = "Tìm";
+            this.bnttimkhachhang.UseVisualStyleBackColor = true;
+            this.bnttimkhachhang.Click += new System.EventHandler(this.bnttimkhachhang_Click);
             // 
             // panel15
             // 
@@ -1958,57 +2014,6 @@
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.Width = 125;
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(278, 12);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(73, 17);
-            this.label26.TabIndex = 14;
-            this.label26.Text = "Đến ngày:";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(133, 12);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(64, 17);
-            this.label27.TabIndex = 13;
-            this.label27.Text = "Từ ngày:";
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker4.Location = new System.Drawing.Point(281, 36);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(104, 22);
-            this.dateTimePicker4.TabIndex = 12;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(136, 36);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(112, 22);
-            this.dateTimePicker3.TabIndex = 11;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(778, 18);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 63);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Hủy tìm";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2098,8 +2103,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ten_DM;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox txttimsach;
+        private System.Windows.Forms.Button bntimsach;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnxoasp;
         private System.Windows.Forms.Button btnsuasanpham;
@@ -2116,8 +2121,8 @@
         private System.Windows.Forms.TextBox txtidstaff;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.TextBox txttimnv;
+        private System.Windows.Forms.Button bntimnv;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button bntxoanv;
         private System.Windows.Forms.Button bntsuanv;
@@ -2133,8 +2138,8 @@
         private System.Windows.Forms.TextBox txtmknv;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.TextBox txttimkiemkh;
+        private System.Windows.Forms.Button bnttimkhachhang;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button bntxoakh;
