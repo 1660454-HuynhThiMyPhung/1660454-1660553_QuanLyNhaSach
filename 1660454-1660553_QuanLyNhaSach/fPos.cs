@@ -228,6 +228,95 @@ namespace _1660454_1660553_QuanLyNhaSach
             }
         }
 
+        private void bthtimkh_Click_1(object sender, EventArgs e)
+        {
+            clients = ClientDAO.Instance.GetItemsByID(txtsdtkh.Text);
+            if (clients == null)
+            {
+                MessageBox.Show("Không Tìm Thấy Khách Hàng");
+            }
+            else
+            {
+                ltenKH.Text = clients.Name;
+                lsex.Text = clients.Sex;
+                laddress.Text = clients.Address;
+                lemailKH.Text = clients.Email;
+                txtdiem.Text = clients.Diem.ToString();
+                if (clients.Diem > 0)
+                {
+                    Session.discount = 10;
+                    LoadPOS();
+                }
+            }
+        }
+
+        private void bththemkh_Click_1(object sender, EventArgs e)
+        {
+            fKhachHang f = new fKhachHang();
+            f.UpdateClient += F_UpdateClient1;
+            f.ShowDialog();
+        }
+
+        private void bththanhtoan_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thanh toán", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                if (list_items != null)
+                {
+                    if (clients != null)
+                    {
+                        if (OrderDAO.Instance.InsertOrder(list_items, LoginAccount, clients))
+                        {
+                            MessageBox.Show("Thêm đơn hàng thành công");
+                            clients = null;
+                            ltenKH.Text = "";
+                            lsex.Text = "";
+                            laddress.Text = "";
+                            lemailKH.Text = "";
+                            txtdiem.Text = "";
+                            list_items = new List<POS>();
+                            Session.discount = 0;
+                            LoadPOS();
+                            getDoanhThu();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Có lỗi khi thêm đơn hàng");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không có khách hàng");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không có sản phẩm");
+                }
+            }
+        }
+
+        private void bthchietkhau_Click_1(object sender, EventArgs e)
+        {
+            fDiscount f = new fDiscount();
+            f.StartPosition = FormStartPosition.CenterParent;
+            f.FormClosed += F_FormClosed;
+            f.ShowDialog();
+        }
+
+        private void bnthuyphieu_Click_1(object sender, EventArgs e)
+        {
+            clients = null;
+            ltenKH.Text = "";
+            lsex.Text = "";
+            laddress.Text = "";
+            lemailKH.Text = "";
+            txtdiem.Text = "";
+            list_items = new List<POS>();
+            Session.discount = 0;
+            LoadPOS();
+        }
+
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fAdmin f = new fAdmin(loginAccount);

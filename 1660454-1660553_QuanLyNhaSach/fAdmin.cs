@@ -181,6 +181,9 @@ namespace _1660454_1660553_QuanLyNhaSach
             txtprice.DataBindings.Add(new Binding("Text", datagvSP.DataSource, "Price", true, DataSourceUpdateMode.Never));
             txtnote.DataBindings.Add(new Binding("Text", datagvSP.DataSource, "note", true, DataSourceUpdateMode.Never));
             imgsp.DataBindings.Add(new Binding("Image", datagvSP.DataSource, "avatar", true, DataSourceUpdateMode.Never));
+
+            txtstock_mini.DataBindings.Add(new Binding("Text", datagvSP.DataSource, "stockmini", true, DataSourceUpdateMode.Never));
+
         }
         private void button20_Click(object sender, EventArgs e)
         {
