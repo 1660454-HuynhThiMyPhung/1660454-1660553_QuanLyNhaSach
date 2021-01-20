@@ -19,8 +19,8 @@ namespace _1660454_1660553_QuanLyNhaSach.DAO
         }
 
         private DataProvider() { }
-
-        private string connectionSTR = @"Data Source=DESKTOP-L1SCDM8;Initial Catalog=QLNHASACH;Integrated Security=True";
+        private string connectionSTR = @"Data Source=den1.mssql7.gear.host;Initial Catalog=qlnhasach;User ID=qlnhasach;Password=Cd26_k2Tt8-j;Integrated Security=false;";
+        //private string connectionSTR = @"Data Source=DESKTOP-L1SCDM8;Initial Catalog=QLNHASACH;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

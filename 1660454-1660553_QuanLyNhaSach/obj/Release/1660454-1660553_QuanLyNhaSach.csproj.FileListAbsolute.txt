@@ -29,3 +29,6 @@ E:\DoAN\NhaSach\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\
 E:\DoAN\NhaSach\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\1660454-1660553_QuanLyNhaSach.csproj.CoreCompileInputs.cache
 E:\DoAN\NhaSach\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\1660454-1660553_QuanLyNhaSach.exe
 E:\DoAN\NhaSach\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\1660454-1660553_QuanLyNhaSach.pdb
+E:\DoAN\NhaSach\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\bin\Release\MySql.Data.dll
+E:\DoAN\NhaSach\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\bin\Release\MySql.Data.xml
+E:\DoAN\NhaSach\1660454-1660553_QuanLyNhaSach\1660454-1660553_QuanLyNhaSach\obj\Release\1660454-1660553_QuanLyNhaSach.csproj.CopyComplete
